@@ -23,6 +23,17 @@ namespace Exercise.Tests
         }
 
         [Theory]
+        [InlineData(new int[] {1, 4, 3, -4, 1 },-4)]
+        [InlineData(new int[] {6, 2, 9, 5, -8, 4, -9, -1, 2, -7 },504)]
+        [InlineData(new int[] {2, 8, -3, -9, 1, 4, 5, 8, 4, -1, 5, 8, -2, -8, -4, -2, -9, -9, -8, -7, 3, 4, -6, -9, 8, 7, -3, -6, -5, 2, -6, 3, 9, -5, -6, 5, 6, 3, -9, 6, 1, 2, 3, 6, 9, 4, 8, 2, 9, 3 },int.MinValue)]
+        [InlineData(new int[] {-1, 2, -1, -4, 1, -3, 2, 3, -1, 2, -4, 3, 2, -1, -2, 4, 3, -4, 3, -3, -2, -4, 1, -4, 3, 2, -3, 2, 2, -3, 3, 3, 3, -4, 2, -3, -2, 4, -4, 1, -2, 1, -3, -3, 1, 1, -2, 2, -1, -4 },int.MinValue)]
+        public void Test2b(int[] values, int result)
+        {
+            var outcome = prog.CalNegativeMulti(values);
+            Assert.True(outcome == result, $"You should have returned {result} but did return {outcome}.");
+        }
+
+        [Theory]
         [InlineData(new string[] { "3", "3", "0", "-3", "-3", "2", "1", "0", "-4", "-5", "1", "-4", "-3", "1", "1", "-5", "3", "-4", "-2", "-1" }, -34)]
         [InlineData(new string[] { "3", "3", "a", "-3", "four", "1", "2", "1", "-4", "-1", }, -8)]
         [InlineData(new string[] { "-4", "-5", "-5", "-3", "4a", "-4", "three houses", "-1", "-4", "-4" }, -30)]
@@ -37,7 +48,7 @@ namespace Exercise.Tests
         [Theory]
         [InlineData(new string[] { "O", "9", "4", "7", "-7", }, 0)]
         [InlineData(new string[] { "-9", "2", "-5", "-9", "7", "-5", "-2", "-7", "-2", "-9", }, -14)]
-        [InlineData(new string[] { "-9", "2 a", "-5", "-9", "7", "-5", "-2", "- 7", "-2", "-9 -", }, -7)]
+        [InlineData(new string[] { "-9", "2 a", "- 5", "-9", "7", "-5", "-6", "- 7", "-2", "-9 -", }, -7)]
         [InlineData(new string[] { "8 house 3", " boom -3", "-8,0", " -8", "-5", "- -10", "2", "-9 9", "4", "-5", "-2,3,4", "-9,-3", "-4", "3", "- - - - 3", }, -22)]
         public void Test4(string[] values, int result)
         {
