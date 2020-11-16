@@ -60,7 +60,7 @@ namespace Exercise.Tests
         [Theory]
         [InlineData(new string[] { "5", "ignore1", "-8", "add2", "3", "ignore2", "3", "add1", "9", "add0" }, 4)]
         [InlineData(new string[] { "16", "ignore0", "11", "ignore1", "4", "ignore2", "19", "ignore3", "5", "add4", "1", "add5", "11", "ignore6", "15", "ignore7", "17", "add8", "10", "ignore9", "17", "ignore10", "0", "ignore11", "1", "add12", "11", "add13", "12", "ignore14", "18", "ignore15", "2", "ignore16", "17", "ignore17", "16", "add18", "19", "add19" }, 70)]
-        [InlineData(new string[] { "-7", "add234526", "-2", "ignore49921", "-5", "ignore95472", "-5", "ignore91619", "-5", "ignore75508", "-5", "ignore81071", "7", "ignore93595", "-3", "ignore50713", "3", "ignore33333", "6", "ignore81799" }, 0)]
+        [InlineData(new string[] { "-7", "add234526", "-2", "ignore49921", "-5", "ignore95472", "-5", "ignore91619", "-5", "ignore75508", "-5", "ignore81071", "7", "ignore93595", "-3", "ignore50713", "3", "ignore33333", "6", "ignore81799" }, -7)]
         [InlineData(new string[] { "19", "ignore97027", "13", "ignore88276", "12", "ignore71507", "-17", "ignore58673", "6", "ignore81262", "-3", "ignore2192", "1", "add0", "16", "add1", "7", "add2", "-16", "add3", "13", "add4", "5", "add5", "2", "ignore16539", "12", "add6", "-13", "ignore10704" }, 38)]
         public void Test(string[] values, int result)
         {
